@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Soto Grisales | Portafolio Personal</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8u7XHz0S37Y0E/9qT14zP1gR1j7V3F6GvI0J8F6pWdMvXvI3V9W1L9T1F1pQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Configuraciones de estilo y fuente */
+        :root {
+            --primary-color: #3b82f6; /* Blue 500 */
+            --secondary-color: #10b981; /* Emerald 500 */
+            --bg-light: #f9fafb;
+            --bg-dark: #1f2937;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: #1f2937;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 9999px;
+        }
+        .card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+             transform: translateY(-3px);
+        }
+        /* Estilos para el modo oscuro */
+        .dark-mode {
+            background-color: #0f172a; /* Slate 900 */
+            color: #f1f5f9; /* Slate 100 */
+        }
+        .dark-mode .card {
+            background-color: #1e293b; /* Slate 800 */
+            box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -2px rgba(255, 255, 255, 0.05);
+        }
+        .dark-mode .text-gray-600 {
+            color: #94a3b8; /* Slate 400 */
+        }
+        .dark-mode .section-title::after {
+            background-color: #4ade80; /* Green 400 */
+        }
+        .project-link {
+            display: block;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            background-color: #f3f4f6; /* gray-100 */
+            transition: background-color 0.3s, transform 0.2s;
+            text-decoration: none;
+            color: #1f2937;
+        }
+        .project-link:hover {
+            background-color: #e5e7eb; /* gray-200 */
+            transform: scale(1.02);
+        }
+        .dark-mode .project-link {
+            background-color: #334155; /* slate-700 */
+            color: #f1f5f9;
+        }
+        .dark-mode .project-link:hover {
+            background-color: #475569; /* slate-600 */
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Toggle Modo Oscuro -->
+    <button id="theme-toggle" class="fixed top-4 right-4 p-3 rounded-full bg-white dark:bg-gray-700 text-gray-800 dark:text-white shadow-lg z-50 transition duration-300 hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <i id="theme-icon" class="fas fa-sun"></i>
+    </button>
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- HEADER / INFORMACIÓN PERSONAL -->
+        <header class="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-xl mb-8 card">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                
+                <!-- IMAGEN DE PERFIL -->
+                <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden flex-shrink-0 border-4 border-blue-500">
+                    <img src="hoja.jpeg" alt="Daniel Soto Grisales" class="object-cover w-full h-full">
+                </div>
+                
+                <div class="text-center sm:text-left">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-600 dark:text-blue-400">Daniel Soto Grisales</h1>
+                    <p class="text-xl sm:text-2xl font-semibold mt-1">Estudiante y Desarrollador de Software</p>
+                    
+                    <!-- Contacto en modo móvil (Columnas) -->
+                    <div class="mt-4 flex flex-col space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <a href="mailto:danielsotosoto64@gmail.com" class="flex items-center justify-center sm:justify-start hover:text-blue-500">
+                            <i class="fas fa-envelope mr-2 w-5 text-center text-blue-500"></i> danielsotosoto64@gmail.com
+                        </a>
+                        <a href="tel:+573187017386" class="flex items-center justify-center sm:justify-start hover:text-blue-500">
+                            <i class="fas fa-phone mr-2 w-5 text-center text-blue-500"></i> +57 318 701 7386 (Cali)
+                        </a>
+                        <!-- Redes Sociales -->
+                        <div class="flex items-center justify-center sm:justify-start space-x-4 pt-2">
+                            <a href="https://www.instagram.com/dxnisotoo" target="_blank" rel="noopener noreferrer" class="text-pink-600 dark:text-pink-400 text-xl hover:scale-110 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            
+                            <a href="https://github.com/Daniel-code-png" target="_blank" rel="noopener noreferrer" class="text-gray-800 dark:text-gray-300 text-xl hover:scale-110 transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PERFIL PROFESIONAL -->
+        <section class="mb-8 p-6 bg-white dark:bg-gray-800 rounded-2xl card">
+            <h2 class="section-title text-2xl font-bold">Perfil Profesional</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+                Soy un estudiante universitario altamente motivado y comprometido con mi desarrollo académico y profesional. Actualmente curso el quinto semestre en la Universidad Católica (Unicatólica) como Desarrollador de Software. Me destaco por ser una persona proactiva, orientada al logro y con una fuerte ética de trabajo.
+            </p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-base mt-3">
+                Cuento con conocimientos sólidos en <b>HTML</b>, <b>CSS</b> y <b>JavaScript</b>, lo que me permite desarrollar interfaces dinámicas, funcionales y visualmente atractivas. Busco contribuir con mis capacidades a proyectos desafiantes y significativos, mientras continúo fortaleciendo mis competencias técnicas y creciendo personal y profesionalmente.
+            </p>
+        </section>
+
+        <!-- SECCIÓN DE HABILIDADES -->
+        <section class="mb-8 p-6 bg-white dark:bg-gray-800 rounded-2xl card">
+            <h2 class="section-title text-2xl font-bold">Habilidades</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <!-- Habilidades Técnicas -->
+                <div class="col-span-2 sm:col-span-1">
+                    <h3 class="font-semibold text-lg mb-2 text-blue-600 dark:text-blue-400"><i class="fas fa-code mr-2"></i>Técnicas</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-700 dark:text-emerald-100">JavaScript</span>
+                        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-700 dark:text-emerald-100">HTML 5</span>
+                        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-700 dark:text-emerald-100">CSS</span>
+                    </div>
+                </div>
+
+                <!-- Habilidades Blandas -->
+                <div class="col-span-2 sm:col-span-2">
+                    <h3 class="font-semibold text-lg mb-2 text-blue-600 dark:text-blue-400"><i class="fas fa-lightbulb mr-2"></i>Blandas / Personales</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-100">Autonomía</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-100">Capacidad de Adaptación</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-100">Comunicación Efectiva</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-100">Orientación al Logro</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-100">Ética de Trabajo</span>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                // Función para aplicar estilos a los badges (se incluye aquí para el scope de la vista)
+                document.querySelectorAll('.skill-badge').forEach(badge => {
+                    badge.classList.add('px-3', 'py-1', 'text-xs', 'font-medium', 'rounded-full', 'transition', 'duration-200');
+                });
+            </script>
+        </section>
+
+        <!-- NUEVA SECCIÓN: PROYECTOS DESTACADOS -->
+        <section class="mb-8 p-6 bg-white dark:bg-gray-800 rounded-2xl card">
+            <h2 class="section-title text-2xl font-bold">Proyectos Destacados</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Estos son algunos de los proyectos web que he desarrollado, alojados en Vercel:
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Proyecto 1: Mr Caninos -->
+                <a href="https://mrcaninos.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link shadow-md hover:shadow-lg">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-paw text-xl text-blue-500"></i>
+                        <div>
+                            <p class="font-bold text-base hover:underline">Mr Caninos</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate">https://mrcaninos.vercel.app/</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Proyecto 2: Residuos One -->
+                <a href="https://residuos-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link shadow-md hover:shadow-lg">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-recycle text-xl text-green-500"></i>
+                        <div>
+                            <p class="font-bold text-base hover:underline">Residuos One</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate">https://residuos-one.vercel.app/</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Proyecto 3: Bad Duck -->
+                <a href="https://bad-duck.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link shadow-md hover:shadow-lg">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-feather-alt text-xl text-yellow-600"></i>
+                        <div>
+                            <p class="font-bold text-base hover:underline">Bad Duck</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate">https://bad-duck.vercel.app/</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Proyecto 4: Sweetlab -->
+                <a href="https://sweetlab-eight.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link shadow-md hover:shadow-lg">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-cookie-bite text-xl text-pink-500"></i>
+                        <div>
+                            <p class="font-bold text-base hover:underline">Sweetlab</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate">https://sweetlab-eight.vercel.app/</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA LABORAL -->
+        <section class="mb-8 p-6 bg-white dark:bg-gray-800 rounded-2xl card">
+            <h2 class="section-title text-2xl font-bold">Experiencia Laboral</h2>
+
+            <!-- Item: Vendedor -->
+            <div class="relative pl-6 pb-6 border-l-4 border-blue-200 dark:border-blue-700 mb-6 last:mb-0">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Nov 2024 - Feb 2025</p>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Vendedor en <span class="text-blue-600 dark:text-blue-400">Vaporrella</span></h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1">
+                    Encargado de la venta y promoción de productos, brindando asesoría personalizada a los clientes y asegurando una experiencia de compra satisfactoria.
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    <i class="fas fa-award mr-1"></i>Desarrollé habilidades en comunicación, atención al cliente y gestión de ventas.
+                </p>
+            </div>
+
+            <!-- Item: Hornero -->
+            <div class="relative pl-6 pb-6 border-l-4 border-blue-200 dark:border-blue-700 last:mb-0">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Dic 2022 - Nov 2024</p>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Hornero en <span class="text-blue-600 dark:text-blue-400">Daini's Pizza</span></h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1">
+                    Negocio de barrio donde me desempeñaba como hornero, realizando múltiples funciones: atender clientes, tomar órdenes, lavar platos y la preparación de los ingredientes.
+                </p>
+            </div>
+        </section>
+
+        <!-- FORMACIÓN ACADÉMICA -->
+        <section class="mb-8 p-6 bg-white dark:bg-gray-800 rounded-2xl card">
+            <h2 class="section-title text-2xl font-bold">Formación Académica</h2>
+
+            <!-- Item: Desarrollador de Software -->
+            <div class="relative pl-6 pb-6 border-l-4 border-blue-200 dark:border-blue-700 mb-6 last:mb-0">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Ago 2023 - Actual</p>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Desarrollador de Software (Quinto Semestre)</h3>
+                <p class="text-blue-600 dark:text-blue-400 font-semibold">Unicatólica</p>
+            </div>
+
+            <!-- Item: Secundaria -->
+            <div class="relative pl-6 pb-6 border-l-4 border-blue-200 dark:border-blue-700 mb-6 last:mb-0">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Ene 2018 - Nov 2019</p>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Secundaria</h3>
+                <p class="text-blue-600 dark:text-blue-400 font-semibold">Instituto Comercial, Industrial y Técnico (ICIT)</p>
+            </div>
+
+            <!-- Item: Primaria -->
+            <div class="relative pl-6 border-l-4 border-blue-200 dark:border-blue-700 last:mb-0">
+                <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Ene 2015 - Nov 2019</p>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Primaria</h3>
+                <p class="text-blue-600 dark:text-blue-400 font-semibold">Colegio Lorencita Villegas</p>
+            </div>
+        </section>
+        
+        <!-- INFORMACIÓN ADICIONAL / HOBBIES -->
+        <section class="mb-8 p-6 bg-white dark:bg-gray-800 rounded-2xl card">
+            <h2 class="section-title text-2xl font-bold">Información Adicional</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-lg mb-2 text-blue-600 dark:text-blue-400"><i class="fas fa-globe mr-2"></i>Datos Relevantes</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        <span class="font-medium">Identificación:</span> 1126624382
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        <span class="font-medium">Fecha Nacimiento:</span> 23 Julio 2005 (Milán)
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-2 text-blue-600 dark:text-blue-400"><i class="fas fa-gamepad mr-2"></i>Hobbies e Intereses</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-red-100 text-red-800 dark:bg-red-700 dark:text-red-100 skill-badge">Baloncesto</span>
+                        <span class="bg-red-100 text-red-800 dark:bg-red-700 dark:text-red-100 skill-badge">Ajedrez</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center text-gray-500 dark:text-gray-400 text-sm py-4">
+            <p>CV Digital creado con la información proporcionada por Daniel Soto Grisales.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Lógica del Toggle de Modo Oscuro
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        // Función para establecer el modo (guarda en localStorage)
+        function setDarkMode(isDark) {
+            if (isDark) {
+                body.classList.add('dark-mode');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // 1. Verificar preferencia del sistema o localStorage al cargar
+        const preferredTheme = localStorage.getItem('theme');
+        const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (preferredTheme === 'dark' || (!preferredTheme && systemPreference)) {
+            setDarkMode(true);
+        } else {
+            setDarkMode(false);
+        }
+
+        // 2. Event Listener para el botón
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark-mode');
+            setDarkMode(!isDark);
+        });
+    </script>
+</body>
+</html>
